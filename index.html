@@ -1,41 +1,66 @@
 <!DOCTYPE html>
 <html>
-<head> 
+
+<head>
     <meta charset="UTF-8">
-	<meta name="viewport" content="initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1.0">
     <title>Maps JavaScript API</title>
-	<style> 
-  	  #map {
-        height: 100%;
-      }
-     
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-	</style> 
-</head>  
-	<body>
-		<div id ="map"> </div> 
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCKiIqCdZGrVxx06LSbe7uG3zXOq1Cz5k&callback=initMap" async defer></script>
-	<script>
-		
-      var map;
-  	 function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-		  center: {lat: -25.35710906982422, lng: -57.614601135253906},
-          zoom: 13,
-        });
-        var marker = new google.maps.Marker({
-          position: {lat: -25.35710906982422, lng: -57.614601135253906},
-          map: map,
-	  title: 'Acuario de Gijón'
-        });
-      }
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        #map, #caja_mapa {
+            height: 100%;
+          }
+          /*html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+          }*/
+    </style>
+</head>
 
-      
-	</script>
+<body>
 
-	</body> 
+    <div class="container">
+        <div class="card">
+            <div class="card-header">Ingrese su datos</div>
+            <div class="card-body">
+                <form novalidate>
+                    <div class="form-group">
+                        <label for="latitud">Latitud</label>
+                        <input type="text" class="form-control" id="latitud" aria-describedby="latitud" value="-25.35710906982422"
+                            placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="longitud">Longitud</label>
+                        <input type="text" class="form-control" id="longitud" placeholder="" value="-57.614601135253906">
+                    </div>
+                    <button type="button" id="procesar" class="btn btn-primary">Procesar</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card" style="display: none;" id="caja_mapa">
+            <div class="card-header">El mapa</div>
+            <div class="card-body" style="height: 800px;">
+                <div id="map"> </div>            
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCKiIqCdZGrVxx06LSbe7uG3zXOq1Cz5k"></script>
+    <script src="./app.js"></script>
+
+</body>
+
 </html>
