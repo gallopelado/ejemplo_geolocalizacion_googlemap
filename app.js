@@ -1,3 +1,8 @@
+/**
+ * Trabajo realizado por @author Juan Jose Gonzalez Ramirez
+ * Me basé en un trabajo anterior del sitio https://mappinggis.com/2018/02/primeros-pasos-con-la-api-javascript-de-google-maps/
+ * Créditos a Jose Luis García Grandes
+ */
 document.addEventListener('DOMContentLoaded', () => {
 
     // Obtener inputs
